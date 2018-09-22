@@ -10,23 +10,18 @@ using System.Windows.Forms;
 
 namespace TicTacToe
 {
-    public partial class WelcomeForm : Form
+    public partial class TicTacToe : Form
     {
-        public WelcomeForm()
+        public TicTacToe()
         {
             InitializeComponent();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btnPlay_Click(object sender, EventArgs e)
+        private void TicTacToe_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Hide();
-            TicTacToe ticTacToe = new TicTacToe();
-            ticTacToe.ShowDialog();
+            WelcomeForm welcomeForm = new WelcomeForm();
+            welcomeForm.ShowDialog();
             this.Close();
         }
     }
