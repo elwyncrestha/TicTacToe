@@ -16,5 +16,18 @@ namespace TicTacToe
         {
             InitializeComponent();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            NamePlayer namePlayer = new NamePlayer();
+            namePlayer.ShowDialog();
+            this.Close();
+        }
     }
 }
