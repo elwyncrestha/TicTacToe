@@ -24,5 +24,15 @@ namespace TicTacToe
             welcomeForm.ShowDialog();
             this.Close();
         }
+
+        private void TicTacToe_Load(object sender, EventArgs e)
+        {
+            lblRound.Text = Game.gameRound.ToString();
+            lblFirstPlayer.Text = Game.player1Name;
+            lblSecondPlayer.Text = Game.player2Name;
+            lblFirstPlayerScore.Text = Game.player1Score.ToString();
+            lblSecondPlayerScore.Text = Game.player2Score.ToString();
+            pbGameProgress.Value = (int) Game.gameProgress;
+        }
     }
 }

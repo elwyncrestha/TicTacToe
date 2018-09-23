@@ -8,3 +8,4 @@ D:\Elvin\3W\6_C#\TicTacToe\TicTacToe\obj\Debug\TicTacToe.csproj.GenerateResource
 D:\Elvin\3W\6_C#\TicTacToe\TicTacToe\obj\Debug\TicTacToe.exe
 D:\Elvin\3W\6_C#\TicTacToe\TicTacToe\obj\Debug\TicTacToe.pdb
 D:\Elvin\3W\6_C#\TicTacToe\TicTacToe\obj\Debug\TicTacToe.TicTacToe.resources
+D:\Elvin\3W\6_C#\TicTacToe\TicTacToe\obj\Debug\TicTacToe.NamePlayer.resources

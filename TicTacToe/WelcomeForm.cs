@@ -25,8 +25,8 @@ namespace TicTacToe
         private void btnPlay_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TicTacToe ticTacToe = new TicTacToe();
-            ticTacToe.ShowDialog();
+            NamePlayer namePlayer = new NamePlayer();
+            namePlayer.ShowDialog();
             this.Close();
         }
     }

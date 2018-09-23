@@ -46,11 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Game.cs" />
     <Compile Include="TicTacToe.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TicTacToe.Designer.cs">
       <DependentUpon>TicTacToe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NamePlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NamePlayer.Designer.cs">
+      <DependentUpon>NamePlayer.cs</DependentUpon>
     </Compile>
     <Compile Include="WelcomeForm.cs">
       <SubType>Form</SubType>
@@ -62,6 +69,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="TicTacToe.resx">
       <DependentUpon>TicTacToe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NamePlayer.resx">
+      <DependentUpon>NamePlayer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
