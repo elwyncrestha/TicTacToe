@@ -8,11 +8,22 @@ namespace TicTacToe
 {
     public static class Game
     {
+        // player names
         public static string player1Name = null;
         public static string player2Name = null;
-        public static float gameProgress = 0.0f;
+
+        // progress tracker
+        public static int gameProgress = 0;
+
+        // score
         public static int player1Score = 0;
         public static int player2Score = 0;
+
+        // round
         public static int gameRound = 0;
+
+        // 0 for player1, 1 for player2
+        public static byte playerTurn = 0;
+
     }
 }
