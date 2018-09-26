@@ -8,11 +8,97 @@ namespace TicTacToe
 {
     public static class Game
     {
+        // player names
         public static string player1Name = null;
         public static string player2Name = null;
-        public static float gameProgress = 0.0f;
+
+        // game progress tracker
+        public static int gameProgress = 0;
+
+        // score
         public static int player1Score = 0;
         public static int player2Score = 0;
+
+        // round
         public static int gameRound = 0;
+
+        // 0 for player1, 1 for player2
+        public static byte playerTurn = 0;
+
+        // win combinations
+        public static string[] winCombinations = { "123", "159", "147", "258", "369", "357", "456", "789" };
+
+        // player combinations
+        public static StringBuilder player1Combinations = new StringBuilder("");
+        public static StringBuilder player2Combinations = new StringBuilder("");
+
+        // methods
+        // sort string character in ascending order
+        public static string sortString(string stringName)
+        {
+            StringBuilder stringBuilder = new StringBuilder(stringName);
+            int stringLength = stringBuilder.Length;
+
+            for(int i = 0; i < stringLength - 1; i ++)
+            {
+                for(int j = i+1; j < stringLength; j ++)
+                {
+                    if(stringBuilder[i] > stringBuilder[j])
+                    {
+                        char temp = stringBuilder[i];
+                        stringBuilder[i] = stringBuilder[j];
+                        stringBuilder[j] = temp;
+                    }
+                }
+            }
+
+            return stringBuilder.ToString();
+        }
+
+        // method to check odds that player wins the game.
+        public static bool playerWin(string playerCombinations)
+        {
+            // sorted string
+            string sortedCombinations = sortString(playerCombinations);
+            
+            // checks every single win combinations with player combination
+            for(int i = 0; i < winCombinations.Length; i ++)
+            {
+                int passCount = 0;
+
+                int stringLength = winCombinations[i].Length;
+                for (int j = 0; j < stringLength; j++)
+                {
+                    // if a character of the player combination is contained in current win combination, passCount increases
+                    if (sortedCombinations.Contains( (winCombinations[i])[j] ))
+                    {
+                        passCount++;
+                    }
+                }
+
+                // if all 3 combination matches the win combination, method returns true
+                if(passCount >= 3)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+
+        }
+
+        public static void resetAll()
+        {
+            player1Name = null;
+            player2Name = null;
+            gameProgress = 0;
+            player1Score = 0;
+            player2Score = 0;
+            gameRound = 0;
+            playerTurn = 0;
+            player1Combinations = new StringBuilder("");
+            player2Combinations = new StringBuilder("");
+        }
+
     }
 }
