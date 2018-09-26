@@ -12,7 +12,7 @@ namespace TicTacToe
         public static string player1Name = null;
         public static string player2Name = null;
 
-        // progress tracker
+        // game progress tracker
         public static int gameProgress = 0;
 
         // score
@@ -33,10 +33,12 @@ namespace TicTacToe
         public static StringBuilder player2Combinations = new StringBuilder("");
 
         // methods
+        // sort string character in ascending order
         public static string sortString(string stringName)
         {
             StringBuilder stringBuilder = new StringBuilder(stringName);
             int stringLength = stringBuilder.Length;
+
             for(int i = 0; i < stringLength - 1; i ++)
             {
                 for(int j = i+1; j < stringLength; j ++)
@@ -53,11 +55,13 @@ namespace TicTacToe
             return stringBuilder.ToString();
         }
 
+        // method to check odds that player wins the game.
         public static bool playerWin(string playerCombinations)
         {
+            // sorted string
             string sortedCombinations = sortString(playerCombinations);
             
-
+            // checks every single win combinations with player combination
             for(int i = 0; i < winCombinations.Length; i ++)
             {
                 int passCount = 0;
@@ -65,12 +69,14 @@ namespace TicTacToe
                 int stringLength = winCombinations[i].Length;
                 for (int j = 0; j < stringLength; j++)
                 {
+                    // if a character of the player combination is contained in current win combination, passCount increases
                     if (sortedCombinations.Contains( (winCombinations[i])[j] ))
                     {
                         passCount++;
                     }
                 }
 
+                // if all 3 combination matches the win combination, method returns true
                 if(passCount >= 3)
                 {
                     return true;
