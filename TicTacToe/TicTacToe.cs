@@ -37,6 +37,21 @@ namespace TicTacToe
             lblFirstPlayerScore.Text = Game.player1Score.ToString();
             lblSecondPlayerScore.Text = Game.player2Score.ToString();
             pbGameProgress.Value = Game.gameProgress;
+            playerTurnColor();
+        }
+
+        private void playerTurnColor()
+        {
+            if (Game.playerTurn == 0)
+            {
+                lblFirstPlayer.ForeColor = Color.Yellow;
+                lblSecondPlayer.ForeColor = Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
+            }
+            else if (Game.playerTurn == 1)
+            {
+                lblSecondPlayer.ForeColor = Color.Yellow;
+                lblFirstPlayer.ForeColor = Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
+            }
         }
 
         private void refreshGameDetails()
@@ -118,8 +133,11 @@ namespace TicTacToe
                         MessageBox.Show(Game.player1Name + " won this round !!!");
                         Game.player1Score++;
                         resetGame();
+                        // winner turn
+                        Game.playerTurn = 0;
                     }
                 }
+                playerTurnColor();
             }
             else if (Game.playerTurn == 1)
             {
@@ -136,8 +154,11 @@ namespace TicTacToe
                         MessageBox.Show(Game.player2Name + " won this round !!!");
                         Game.player2Score++;
                         resetGame();
+                        // winner turn
+                        Game.playerTurn = 1;
                     }
                 }
+                playerTurnColor();
             }
 
             // Check game termination

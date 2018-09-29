@@ -19,8 +19,8 @@ namespace TicTacToe
 
         private void btnDefaultName_Click(object sender, EventArgs e)
         {
-            Game.player1Name = "Player 1";
-            Game.player2Name = "Player 2";
+            Game.player1Name = "Player 1: O";
+            Game.player2Name = "Player 2: X";
 
             this.Hide();
             TicTacToe ttt = new TicTacToe();
@@ -38,8 +38,8 @@ namespace TicTacToe
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            Game.player1Name = txtFirstPlayer.Text.Trim();
-            Game.player2Name = txtSecondPlayer.Text.Trim();
+            Game.player1Name = txtFirstPlayer.Text.Trim() + ": O";
+            Game.player2Name = txtSecondPlayer.Text.Trim() + ": X";
 
             this.Hide();
             TicTacToe ttt = new TicTacToe();
